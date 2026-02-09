@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Path
+    uniqueID: 3495973997
+    locked: 0
+  - name: Trees
+    uniqueID: 558872691
+    locked: 0
+  - name: house good
+    uniqueID: 961800803
+    locked: 0
+  - name: Door
+    uniqueID: 2860119441
+    locked: 0
+  - name: Camp
+    uniqueID: 2535012315
+    locked: 0
+  - name: Bulidings
+    uniqueID: 718940671
+    locked: 0
+  m_RenderingLayers:
+  - Default
