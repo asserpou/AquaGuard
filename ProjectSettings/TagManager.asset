@@ -59,5 +59,8 @@ TagManager:
   - name: Bulidings
     uniqueID: 718940671
     locked: 0
+  - name: Factory
+    uniqueID: 3750945477
+    locked: 0
   m_RenderingLayers:
   - Default
