@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 85a1eb7c6eac0934f8bcf96341b97fe1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3920757034353220125
+    second: omar path_0
+  - first:
+      213: 2291023972806202554
+    second: omar path_1
+  - first:
+      213: 8527186545799766301
+    second: omar path_2
+  - first:
+      213: 8950575272325526780
+    second: omar path_3
+  - first:
+      213: 4834492751707543185
+    second: omar path_4
+  - first:
+      213: 8366714715585012108
+    second: omar path_5
+  - first:
+      213: -7716520563859683641
+    second: omar path_6
+  - first:
+      213: -5176922640456702745
+    second: omar path_7
+  - first:
+      213: 1411348184006578135
+    second: omar path_8
+  - first:
+      213: 5681744977672430188
+    second: omar path_9
+  - first:
+      213: 5702320393613876211
+    second: omar path_10
+  - first:
+      213: 1936778587265564726
+    second: omar path_11
+  - first:
+      213: 4954782567097055515
+    second: omar path_12
+  - first:
+      213: -8676790423964520442
+    second: omar path_13
+  - first:
+      213: -6340860424487049300
+    second: omar path_14
+  - first:
+      213: -8784474482568922087
+    second: omar path_15
+  - first:
+      213: -6825722114659454746
+    second: omar path_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: omar path_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 654
+        width: 96
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e523c4104ca699c0800000000000000
+      internalID: -3920757034353220125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 654
+        width: 95
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab494073a2a5bcf10800000000000000
+      internalID: 2291023972806202554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_2
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 867
+        width: 93
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11a2e30cf6a65670800000000000000
+      internalID: 8527186545799766301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_3
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 866
+        width: 94
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf4bb5ab9c4d63c70800000000000000
+      internalID: 8950575272325526780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_4
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 864
+        width: 196
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1969abe1b81971340800000000000000
+      internalID: 4834492751707543185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_5
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 654
+        width: 305
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c816a7f74ba8c1470800000000000000
+      internalID: 8366714715585012108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_6
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 654
+        width: 280
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c685295e6969e490800000000000000
+      internalID: -7716520563859683641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_7
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 654
+        width: 209
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e4a6e97940e728b0800000000000000
+      internalID: -5176922640456702745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 503
+        width: 127
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dfca1a12bd169310800000000000000
+      internalID: 1411348184006578135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_9
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 503
+        width: 127
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62668a34fc99de40800000000000000
+      internalID: 5681744977672430188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_10
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 331
+        width: 299
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb12d09f26b22f40800000000000000
+      internalID: 5702320393613876211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_11
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 331
+        width: 299
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6300c861dd1d0ea10800000000000000
+      internalID: 1936778587265564726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_12
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 334
+        width: 126
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b193e134e7ce2c440800000000000000
+      internalID: 4954782567097055515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_13
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 333
+        width: 126
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600751db419d59780800000000000000
+      internalID: -8676790423964520442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 337
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca7ed1c0a0db008a0800000000000000
+      internalID: -6340860424487049300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_15
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 0
+        width: 341
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91cfeff0007471680800000000000000
+      internalID: -8784474482568922087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: omar path_16
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 0
+        width: 319
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e0f134a6e92641a0800000000000000
+      internalID: -6825722114659454746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      omar path_0: -3920757034353220125
+      omar path_1: 2291023972806202554
+      omar path_10: 5702320393613876211
+      omar path_11: 1936778587265564726
+      omar path_12: 4954782567097055515
+      omar path_13: -8676790423964520442
+      omar path_14: -6340860424487049300
+      omar path_15: -8784474482568922087
+      omar path_16: -6825722114659454746
+      omar path_2: 8527186545799766301
+      omar path_3: 8950575272325526780
+      omar path_4: 4834492751707543185
+      omar path_5: 8366714715585012108
+      omar path_6: -7716520563859683641
+      omar path_7: -5176922640456702745
+      omar path_8: 1411348184006578135
+      omar path_9: 5681744977672430188
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
