@@ -50,9 +50,6 @@ TagManager:
   - name: Fence2
     uniqueID: 3811580159
     locked: 0
-  - name: house good
-    uniqueID: 961800803
-    locked: 0
   - name: Door
     uniqueID: 2860119441
     locked: 0
@@ -67,6 +64,12 @@ TagManager:
     locked: 0
   - name: Fence
     uniqueID: 2679693663
+    locked: 0
+  - name: house good
+    uniqueID: 961800803
+    locked: 0
+  - name: floor
+    uniqueID: 1014906289
     locked: 0
   m_RenderingLayers:
   - Default
