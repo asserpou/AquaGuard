@@ -62,5 +62,8 @@ TagManager:
   - name: Factory
     uniqueID: 3750945477
     locked: 0
+  - name: Fence
+    uniqueID: 2679693663
+    locked: 0
   m_RenderingLayers:
   - Default
