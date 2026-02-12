@@ -47,6 +47,9 @@ TagManager:
   - name: Trees
     uniqueID: 558872691
     locked: 0
+  - name: Fence2
+    uniqueID: 3811580159
+    locked: 0
   - name: house good
     uniqueID: 961800803
     locked: 0
