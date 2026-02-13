@@ -56,20 +56,23 @@ TagManager:
   - name: Camp
     uniqueID: 2535012315
     locked: 0
-  - name: Bulidings
-    uniqueID: 718940671
-    locked: 0
   - name: Factory
     uniqueID: 3750945477
     locked: 0
   - name: Fence
     uniqueID: 2679693663
     locked: 0
-  - name: house good
-    uniqueID: 961800803
+  - name: Bulidings
+    uniqueID: 718940671
     locked: 0
   - name: floor
     uniqueID: 1014906289
+    locked: 0
+  - name: house good
+    uniqueID: 961800803
+    locked: 0
+  - name: Chair
+    uniqueID: 580506241
     locked: 0
   m_RenderingLayers:
   - Default
