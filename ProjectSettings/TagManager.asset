@@ -77,5 +77,8 @@ TagManager:
   - name: Chair
     uniqueID: 580506241
     locked: 0
+  - name: ui
+    uniqueID: 992622087
+    locked: 0
   m_RenderingLayers:
   - Default
