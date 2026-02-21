@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 731d8bb2eaeaf5e4282b7f6cb0df66be
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - barFill: {instanceID: 0}
+  - face: {instanceID: 0}
+  - happy: {fileID: 7801881510924318990, guid: 238ee0b8157ec964f88d92b4effdcac6, type: 3}
+  - normal: {fileID: -7963430592884048618, guid: 22b21089a08b98546888e0674cb23a92, type: 3}
+  - sad: {fileID: -4597436970944649126, guid: 386c898cd04d35045b6fb92db56c3de1, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
