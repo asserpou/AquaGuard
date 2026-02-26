@@ -44,14 +44,14 @@ TagManager:
   - name: Path
     uniqueID: 3495973997
     locked: 0
+  - name: Fix bug
+    uniqueID: 843475001
+    locked: 0
   - name: Trees
     uniqueID: 558872691
     locked: 0
   - name: Fence2
     uniqueID: 3811580159
-    locked: 0
-  - name: Door
-    uniqueID: 2860119441
     locked: 0
   - name: Camp
     uniqueID: 2535012315
@@ -61,6 +61,12 @@ TagManager:
     locked: 0
   - name: floor
     uniqueID: 1014906289
+    locked: 0
+  - name: player
+    uniqueID: 3001980567
+    locked: 0
+  - name: mosquetress
+    uniqueID: 3021442491
     locked: 0
   - name: Npcs
     uniqueID: 2199378445
@@ -79,9 +85,6 @@ TagManager:
     locked: 0
   - name: ui
     uniqueID: 992622087
-    locked: 0
-  - name: player
-    uniqueID: 3001980567
     locked: 0
   m_RenderingLayers:
   - Default
