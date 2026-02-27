@@ -1,15 +1,15 @@
 using System.Collections;
 using UnityEngine;
-using TMPro; // Added this to control the words!
+using TMPro;
 
 public class TapController : MonoBehaviour
 {
     public Animator animator;
-    public TextMeshProUGUI statusText; // Changed from GameObject to TextMeshProUGUI
+    public TMP_Text statusText;
 
     public bool isLeaking = false;
-    public float leakDuration = 20f;
-    public float hurryUpTime = 5f; // When to show the warning
+    public float leakDuration = 20f; // The "Cooldown"
+    public float hurryUpTime = 5f;   // Last 5 seconds
 
     private Coroutine leakCoroutine;
 
@@ -17,21 +17,23 @@ public class TapController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         
-        // Hide text at start
+        // Ensure text is invisible at the start
         if (statusText != null) statusText.gameObject.SetActive(false);
     }
 
     public void StartLeak()
     {
+        // If already leaking, don't do anything
         if (isLeaking) return;
 
         isLeaking = true;
         animator.SetBool("IsLeaking", true);
         
+        // Show text ONLY when leak starts
         if (statusText != null)
         {
             statusText.gameObject.SetActive(true);
-            statusText.text = "Fix Me!"; // Initial message
+            statusText.text = "Fix Me!";
             statusText.color = Color.white;
         }
 
@@ -47,31 +49,48 @@ public class TapController : MonoBehaviour
             yield return new WaitForSeconds(1f);
             currentTime--;
 
-            // Change message if time is running low
-            if (currentTime <= hurryUpTime && isLeaking)
+            // Logic: If user fixed it, this coroutine is stopped, so this code won't run.
+            // If we are here, it is still leaking.
+
+            // WARNING ALERT (Last 5 Seconds)
+            if (currentTime <= hurryUpTime)
             {
-                statusText.text = "Hurry up! Water is decreasing!";
-                statusText.color = Color.red;
+                if (statusText != null)
+                {
+                    statusText.text = "Hurry up! Water is decreasing!";
+                    statusText.color = Color.red; // Visual urgency
+                }
             }
         }
 
-        // If the loop finishes and it's still leaking, they failed
+        // --- TIME IS UP (COOLDOWN ENDED) ---
+        // Player failed to fix it in time.
         if (isLeaking)
         {
-            statusText.text = "Too late! Tap is broken.";
+            if (statusText != null)
+            {
+                statusText.text = "Better watch out water is important";
+                statusText.color = Color.red;
+            }
+
+            // Keep the text for 2 seconds so the player sees they failed
             yield return new WaitForSeconds(2f);
+
+            // Reset the tap so it stops leaking and waits for GameManager to pick it again
             StopLeak();
         }
     }
 
     public void FixTap()
     {
+        // If the tap isn't leaking (or the time ran out and we called StopLeak),
+        // this returns immediately, making it "not interactive."
         if (!isLeaking) return;
 
         isLeaking = false;
 
-        if (leakCoroutine != null)
-            StopCoroutine(leakCoroutine);
+        // Stop the timer so the "Time Up" logic doesn't happen
+        if (leakCoroutine != null) StopCoroutine(leakCoroutine);
 
         animator.SetBool("IsLeaking", false);
         
@@ -80,9 +99,10 @@ public class TapController : MonoBehaviour
         {
             statusText.text = "Nice Job!";
             statusText.color = Color.green;
-            StartCoroutine(HideTextAfterDelay(2f)); // Hide it after 2 seconds
+            StartCoroutine(HideTextAfterDelay(1.5f));
         }
 
+        // Notify Manager
         if (GameManager.Instance != null)
         {
             GameManager.Instance.TapFixed();
@@ -92,13 +112,14 @@ public class TapController : MonoBehaviour
     IEnumerator HideTextAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        statusText.gameObject.SetActive(false);
+        if (statusText != null) statusText.gameObject.SetActive(false);
     }
 
     public void StopLeak()
     {
         isLeaking = false;
         animator.SetBool("IsLeaking", false);
+        // Hide text immediately when reset/failed
         if (statusText != null) statusText.gameObject.SetActive(false);
     }
 }

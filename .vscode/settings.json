@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "AquaGuard.slnx"
+    "dotnet.defaultSolution": "Aqua Guard.slnx"
 }
