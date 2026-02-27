@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4864059789314815258}
   - component: {fileID: 7822051115090240354}
   - component: {fileID: 1604927992008542326}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FixMeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 6522851594204465401}
   - component: {fileID: 3781632645662059085}
   - component: {fileID: 4845770878405649122}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: watertap_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,8 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5629270dd643943a344a0645ba7931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TapController
-  animator: {fileID: 0}
-  statusText: {fileID: 0}
+  animator: {fileID: 3101484182806724964}
+  statusText: {fileID: 1604927992008542326}
   isLeaking: 0
   leakDuration: 20
   hurryUpTime: 5
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 3084436501940520271}
   - component: {fileID: 1441578858449150719}
   - component: {fileID: 5666412672946891574}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
