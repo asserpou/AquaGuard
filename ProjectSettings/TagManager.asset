@@ -86,5 +86,8 @@ TagManager:
   - name: ui
     uniqueID: 992622087
     locked: 0
+  - name: watertap
+    uniqueID: 3688044249
+    locked: 0
   m_RenderingLayers:
   - Default
