@@ -1,0 +1,1144 @@
+fileFormatVersion: 2
+guid: e758e5c2a63d9f948a82947ddd01e25a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5397813762413582839
+    second: Border Text_0
+  - first:
+      213: -7183232802875212135
+    second: Border Text_1
+  - first:
+      213: -3493561766644314252
+    second: Border Text_2
+  - first:
+      213: 1189536287993229100
+    second: Border Text_3
+  - first:
+      213: 775290447565939941
+    second: Border Text_4
+  - first:
+      213: 4814391963594015511
+    second: Border Text_5
+  - first:
+      213: 4033483858484864986
+    second: Border Text_6
+  - first:
+      213: -1012634253686136506
+    second: Border Text_7
+  - first:
+      213: -8847685675291705238
+    second: Border Text_8
+  - first:
+      213: 9088531453061817715
+    second: Border Text_9
+  - first:
+      213: -8144256720191903360
+    second: Border Text_10
+  - first:
+      213: 5974403348041187926
+    second: Border Text_11
+  - first:
+      213: -3326073323367966242
+    second: Border Text_12
+  - first:
+      213: 867720076910303371
+    second: Border Text_13
+  - first:
+      213: 8313620258956833089
+    second: Border Text_14
+  - first:
+      213: -5926821246661879601
+    second: Border Text_15
+  - first:
+      213: -4756663596297724051
+    second: Border Text_16
+  - first:
+      213: 7192774516433635009
+    second: Border Text_17
+  - first:
+      213: 298750193226792837
+    second: Border Text_18
+  - first:
+      213: 7525922197989862611
+    second: Border Text_19
+  - first:
+      213: -5281849178632301844
+    second: Border Text_20
+  - first:
+      213: -3567156018408233945
+    second: Border Text_21
+  - first:
+      213: -6638387437224166350
+    second: Border Text_22
+  - first:
+      213: 9166545879811414886
+    second: Border Text_23
+  - first:
+      213: 642321445911866317
+    second: Border Text_24
+  - first:
+      213: 1964227655102310520
+    second: Border Text_25
+  - first:
+      213: 5910918933644533131
+    second: Border Text_26
+  - first:
+      213: 853309536844475354
+    second: Border Text_27
+  - first:
+      213: 7528252655293180370
+    second: Border Text_28
+  - first:
+      213: -1800375452873672177
+    second: Border Text_29
+  - first:
+      213: 3128968284895377106
+    second: Border Text_30
+  - first:
+      213: -4565039356626150380
+    second: Border Text_31
+  - first:
+      213: 1008179131737807833
+    second: Border Text_32
+  - first:
+      213: 5372270882843667311
+    second: Border Text_33
+  - first:
+      213: 1936413091014037031
+    second: Border Text_34
+  - first:
+      213: -6843951149774276367
+    second: Border Text_35
+  - first:
+      213: -2029205009241588279
+    second: Border Text_36
+  - first:
+      213: -6897881226453047142
+    second: Border Text_37
+  - first:
+      213: -326104461095605164
+    second: Border Text_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Border Text_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 261
+        width: 131
+        height: 1787
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f95060a403e8ea40800000000000000
+      internalID: 5397813762413582839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1653
+        width: 437
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99e70bdf2d7005c90800000000000000
+      internalID: -7183232802875212135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_2
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 2037
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f874a3510648fc0800000000000000
+      internalID: -3493561766644314252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_3
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1947
+        width: 38
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2fe54593f4128010800000000000000
+      internalID: 1189536287993229100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_4
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 1933
+        width: 92
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e4ebeced8262ca00800000000000000
+      internalID: 775290447565939941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_5
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1921
+        width: 396
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 713448fabf720d240800000000000000
+      internalID: 4814391963594015511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_6
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1871
+        width: 305
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad72340f230d9f730800000000000000
+      internalID: 4033483858484864986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_7
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 1952
+        width: 38
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64125ade28662f1f0800000000000000
+      internalID: -1012634253686136506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_8
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 1923
+        width: 61
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a600def51c4b63580800000000000000
+      internalID: -8847685675291705238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_9
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 1952
+        width: 47
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375e6b51433f02e70800000000000000
+      internalID: 9088531453061817715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_10
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 1921
+        width: 74
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089af51c9a9c9fe80800000000000000
+      internalID: -8144256720191903360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_11
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 1923
+        width: 167
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65246e8f03859e250800000000000000
+      internalID: 5974403348041187926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_12
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 1888
+        width: 149
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed9dfb74fe967d1d0800000000000000
+      internalID: -3326073323367966242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_13
+      rect:
+        serializedVersion: 2
+        x: 1781
+        y: 0
+        width: 267
+        height: 2048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8896b400d2ca0c00800000000000000
+      internalID: 867720076910303371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_14
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1861
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141fc9cf399ef5370800000000000000
+      internalID: 8313620258956833089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1832
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc81b715a73bfbda0800000000000000
+      internalID: -5926821246661879601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1764
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f54aa39afecfdb0800000000000000
+      internalID: -4756663596297724051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1748
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c64281505ed1d360800000000000000
+      internalID: 7192774516433635009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_18
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1711
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58fbcd7c7bf552400800000000000000
+      internalID: 298750193226792837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1956
+        height: 1564
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dca9627d52717860800000000000000
+      internalID: 7525922197989862611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_20
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1545
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce2de6e082a13b6b0800000000000000
+      internalID: -5281849178632301844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1410
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7246168308aee7ec0800000000000000
+      internalID: -3567156018408233945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_22
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1399
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c76da2cc5bfd3a0800000000000000
+      internalID: -6638387437224166350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1359
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66bda7749ec163f70800000000000000
+      internalID: 9166545879811414886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_24
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1258
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb213fa3fbf9e800800000000000000
+      internalID: 642321445911866317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_25
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1245
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8782f5835a6524b10800000000000000
+      internalID: 1964227655102310520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_26
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1093
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8d5308e37dc70250800000000000000
+      internalID: 5910918933644533131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_27
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 928
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb6113b08097db00800000000000000
+      internalID: 853309536844475354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 875
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9242257e9b97860800000000000000
+      internalID: 7528252655293180370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 807
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ab12d7018c307e0800000000000000
+      internalID: -1800375452873672177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_30
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 398
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6f6aeb3145c6b20800000000000000
+      internalID: 3128968284895377106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_31
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 329
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41cde9a44e8b5a0c0800000000000000
+      internalID: -4565039356626150380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_32
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 234
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db91392495cdfd00800000000000000
+      internalID: 1008179131737807833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_33
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 181
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6b221987e32e8a40800000000000000
+      internalID: 5372270882843667311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_34
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 111
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ece4c52758fda10800000000000000
+      internalID: 1936413091014037031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_35
+      rect:
+        serializedVersion: 2
+        x: 2038
+        y: 53
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f8f399a0b66501a0800000000000000
+      internalID: -6843951149774276367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_36
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cd36b79bc0d6d3e0800000000000000
+      internalID: -2029205009241588279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_37
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 0
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a982e62329dc540a0800000000000000
+      internalID: -6897881226453047142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border Text_38
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 0
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45ce9bc68b1797bf0800000000000000
+      internalID: -326104461095605164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Border Text_0: 5397813762413582839
+      Border Text_1: -7183232802875212135
+      Border Text_10: -8144256720191903360
+      Border Text_11: 5974403348041187926
+      Border Text_12: -3326073323367966242
+      Border Text_13: 867720076910303371
+      Border Text_14: 8313620258956833089
+      Border Text_15: -5926821246661879601
+      Border Text_16: -4756663596297724051
+      Border Text_17: 7192774516433635009
+      Border Text_18: 298750193226792837
+      Border Text_19: 7525922197989862611
+      Border Text_2: -3493561766644314252
+      Border Text_20: -5281849178632301844
+      Border Text_21: -3567156018408233945
+      Border Text_22: -6638387437224166350
+      Border Text_23: 9166545879811414886
+      Border Text_24: 642321445911866317
+      Border Text_25: 1964227655102310520
+      Border Text_26: 5910918933644533131
+      Border Text_27: 853309536844475354
+      Border Text_28: 7528252655293180370
+      Border Text_29: -1800375452873672177
+      Border Text_3: 1189536287993229100
+      Border Text_30: 3128968284895377106
+      Border Text_31: -4565039356626150380
+      Border Text_32: 1008179131737807833
+      Border Text_33: 5372270882843667311
+      Border Text_34: 1936413091014037031
+      Border Text_35: -6843951149774276367
+      Border Text_36: -2029205009241588279
+      Border Text_37: -6897881226453047142
+      Border Text_38: -326104461095605164
+      Border Text_4: 775290447565939941
+      Border Text_5: 4814391963594015511
+      Border Text_6: 4033483858484864986
+      Border Text_7: -1012634253686136506
+      Border Text_8: -8847685675291705238
+      Border Text_9: 9088531453061817715
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
