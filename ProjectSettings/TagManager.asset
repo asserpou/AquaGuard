@@ -63,6 +63,9 @@ TagManager:
   - name: floor
     uniqueID: 1014906289
     locked: 0
+  - name: watertap
+    uniqueID: 3688044249
+    locked: 0
   - name: player
     uniqueID: 3001980567
     locked: 0
@@ -86,9 +89,6 @@ TagManager:
     locked: 0
   - name: ui
     uniqueID: 992622087
-    locked: 0
-  - name: watertap
-    uniqueID: 3688044249
     locked: 0
   - name: Fix Me !
     uniqueID: 3594167965
