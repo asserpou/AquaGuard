@@ -66,9 +66,6 @@ TagManager:
   - name: watertap
     uniqueID: 3688044249
     locked: 0
-  - name: player
-    uniqueID: 3001980567
-    locked: 0
   - name: mosquetress
     uniqueID: 3021442491
     locked: 0
@@ -78,20 +75,23 @@ TagManager:
   - name: house good
     uniqueID: 961800803
     locked: 0
-  - name: Bulidings
-    uniqueID: 718940671
-    locked: 0
-  - name: Factory
-    uniqueID: 3750945477
-    locked: 0
-  - name: Chair
-    uniqueID: 580506241
-    locked: 0
   - name: ui
     uniqueID: 992622087
     locked: 0
   - name: Fix Me !
     uniqueID: 3594167965
+    locked: 0
+  - name: Chair
+    uniqueID: 580506241
+    locked: 0
+  - name: player
+    uniqueID: 3001980567
+    locked: 0
+  - name: Bulidings
+    uniqueID: 718940671
+    locked: 0
+  - name: Factory
+    uniqueID: 3750945477
     locked: 0
   m_RenderingLayers:
   - Default
