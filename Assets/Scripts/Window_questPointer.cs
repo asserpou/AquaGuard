@@ -1,51 +1,46 @@
 using UnityEngine;
 
 public class Window_questPointer : MonoBehaviour {
-
     [Header("UI Objects")]
-    public GameObject pointerImage; // اسحب صورة السهم هنا
+    public GameObject pointerImage; 
+    public GameObject dangerIcon;   
+    public GameObject speechBubble; 
 
     [Header("Target")]
-    public Transform target;        // اسحب "البيت" من الـ Hierarchy هنا
-
-    [Header("Settings")]
-    public float borderSize = 50f;  // المسافة عن حافة الشاشة
+    public Transform target; 
 
     void Update() {
-        if (target == null || pointerImage == null) return;
+        if (GameManager.Instance == null || !GameManager.Instance.IsGameWon()) {
+            if (pointerImage.activeSelf) pointerImage.SetActive(false);
+            if (dangerIcon.activeSelf) dangerIcon.SetActive(false);
+            if (speechBubble.activeSelf) speechBubble.SetActive(false);
+            return; //
+        }
 
-        // 1. حساب مكان الهدف على الشاشة
+        if (target == null) return;
+
         Vector3 screenPos = Camera.main.WorldToScreenPoint(target.position);
-
-        // 2. هل الهدف "جوه" كادر الشاشة؟
-        // (screenPos.z > 0) يعني الهدف قدام الكاميرا مش وراها
-        bool isInside = screenPos.z > 0 && 
-                        screenPos.x > 0 && screenPos.x < Screen.width && 
-                        screenPos.y > 0 && screenPos.y < Screen.height;
+        bool isInside = screenPos.z > 0 && screenPos.x > 50 && screenPos.x < Screen.width - 50 && screenPos.y > 50 && screenPos.y < Screen.height - 50;
 
         if (isInside) {
-            // لو وصلت للهدف والبيت باين قدامك: اخفي السهم خالص
-            pointerImage.SetActive(false);
-        } 
-        else {
-            // لو البيت بعيد أو بره الشاشة: اظهر السهم عشان يوجّهك
-            pointerImage.SetActive(true);
+            if (!dangerIcon.activeSelf) dangerIcon.SetActive(true);
+            if (!speechBubble.activeSelf) speechBubble.SetActive(true);
+            if (pointerImage.activeSelf) pointerImage.SetActive(false);
+        } else {
+            if (dangerIcon.activeSelf) dangerIcon.SetActive(false);
+            if (speechBubble.activeSelf) speechBubble.SetActive(false);
+            if (!pointerImage.activeSelf) pointerImage.SetActive(true);
 
-            // لو الهدف ورا الكاميرا، بنعكس الإحداثيات عشان السهم ميتجننش
-            Vector3 cappedScreenPos = screenPos;
-            if (cappedScreenPos.z < 0) cappedScreenPos *= -1f;
+            Vector3 cappedPos = screenPos;
+            if (cappedPos.z < 0) cappedPos *= -1f;
+            float x = Mathf.Clamp(cappedPos.x, 50, Screen.width - 50);
+            float y = Mathf.Clamp(cappedPos.y, 50, Screen.height - 50);
+            pointerImage.transform.position = new Vector3(x, y, 0f);
 
-            // 3. حبس السهم على أطراف الشاشة (Clamping)
-            float x = Mathf.Clamp(cappedScreenPos.x, borderSize, Screen.width - borderSize);
-            float y = Mathf.Clamp(cappedScreenPos.y, borderSize, Screen.height - borderSize);
-            
-            pointerImage.transform.position = new Vector3(x, y, 0);
-
-            // 4. تدوير السهم ليشير لمكان البيت
-            Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-            Vector3 dir = (cappedScreenPos - screenCenter).normalized;
+            Vector3 screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
+            Vector3 dir = (new Vector3(x, y, 0f) - screenCenter).normalized;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            pointerImage.transform.localEulerAngles = new Vector3(0, 0, angle);
+            pointerImage.transform.localEulerAngles = new Vector3(0, 0, angle); 
         }
     }
 }

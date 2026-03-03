@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Needed for TextMeshPro
+using TMPro; 
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("Timer")]
     public float phaseTime = 60f;
     private float currentTime;
-    public TextMeshProUGUI timerText; // Changed from 'Text' to 'TextMeshProUGUI'
+    public TextMeshProUGUI timerText; 
 
     [Header("Water")]
     public Slider waterBar;
@@ -29,18 +29,21 @@ public class GameManager : MonoBehaviour
 
     private int fixedTaps = 0;
     private bool gameEnded = false;
+    private bool isGameWon = false; // ضفنا دي عشان نعرف هو كسب ولا خسر
+
+    [Header("UI Panels")]
+    public GameObject winPanel; // صفحة الفوز
 
     void Awake()
     {
-        // Singleton pattern to allow Taps to talk to the Manager
         if (Instance == null) Instance = this;
     }
 
     void Start()
     {
         gameEnded = false;
+        isGameWon = false;
         fixedTaps = 0;
-
         currentTime = phaseTime;
         currentWater = maxWater;
 
@@ -50,7 +53,6 @@ public class GameManager : MonoBehaviour
             waterBar.value = currentWater;
         }
 
-        // Start the first leak after 5 seconds, then repeat every leakInterval
         InvokeRepeating(nameof(ActivateRandomTaps), 5f, leakInterval);
     }
 
@@ -65,18 +67,11 @@ public class GameManager : MonoBehaviour
     void UpdateTimer()
     {
         currentTime -= Time.deltaTime;
+        if (currentTime < 0) currentTime = 0;
 
-        if (currentTime < 0)
-            currentTime = 0;
+        if (timerText != null) timerText.text = Mathf.Ceil(currentTime).ToString();
 
-        // Displays the countdown in the UI
-        if (timerText != null)
-            timerText.text = Mathf.Ceil(currentTime).ToString();
-
-        if (currentTime <= 0)
-        {
-            CheckPhaseResult();
-        }
+        if (currentTime <= 0) CheckPhaseResult();
     }
 
     void DecreaseWaterOverTime()
@@ -84,13 +79,9 @@ public class GameManager : MonoBehaviour
         currentWater -= waterDecreaseRate * Time.deltaTime;
         currentWater = Mathf.Clamp(currentWater, 0, maxWater);
 
-        if (waterBar != null)
-            waterBar.value = currentWater;
+        if (waterBar != null) waterBar.value = currentWater;
 
-        if (currentWater <= 0)
-        {
-            LoseGame();
-        }
+        if (currentWater <= 0) LoseGame();
     }
 
     void ActivateRandomTaps()
@@ -99,11 +90,9 @@ public class GameManager : MonoBehaviour
 
         List<TapController> inactiveTaps = new List<TapController>();
 
-        // Find all taps that are NOT currently leaking
         foreach (TapController tap in allTaps)
         {
-            if (tap != null && !tap.isLeaking)
-                inactiveTaps.Add(tap);
+            if (tap != null && !tap.isLeaking) inactiveTaps.Add(tap);
         }
 
         if (inactiveTaps.Count == 0) return;
@@ -118,37 +107,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // This is the function called by the TapController
     public void TapFixed()
     {
         if (gameEnded) return;
 
         fixedTaps++;
-
-        // Reward the player with some water back
         currentWater += 5f;
         currentWater = Mathf.Clamp(currentWater, 0, maxWater);
 
-        if (waterBar != null)
-            waterBar.value = currentWater;
+        if (waterBar != null) waterBar.value = currentWater;
 
-        if (fixedTaps >= tapsRequired)
-        {
-            WinGame();
-        }
+        if (fixedTaps >= tapsRequired) WinGame();
     }
 
     void CheckPhaseResult()
     {
-        if (fixedTaps >= tapsRequired)
-            WinGame();
-        else
-            LoseGame();
+        if (fixedTaps >= tapsRequired) WinGame();
+        else LoseGame();
     }
 
     void WinGame()
     {
         gameEnded = true;
+        isGameWon = true; // اللاعب كسب
         CancelInvoke();
         Debug.Log("YOU WIN - Goal Reached!");
     }
@@ -156,7 +137,25 @@ public class GameManager : MonoBehaviour
     void LoseGame()
     {
         gameEnded = true;
+        isGameWon = false; // اللاعب خسر
         CancelInvoke();
         Debug.Log("YOU LOSE - Out of Water or Time!");
+    }
+
+    public void ShowWinScreen()
+    {
+        if (winPanel != null)
+        {
+            winPanel.SetActive(true);
+            Time.timeScale = 0f;      
+            Cursor.lockState = CursorLockMode.None; 
+            Cursor.visible = true;    
+        }
+    }
+
+    // الدالة دي اللي كود البيت وكود السهم هيسألوها
+    public bool IsGameWon() 
+    {
+        return isGameWon;
     }
 }
