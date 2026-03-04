@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour
     public GameObject losePanel;
     public GameObject instructionPanel;
 
+    [Header("Scoring System")]
+    public int finalScore = 0; // ده اللي هيتخزن فيه السكور النهائي
+
     [Header("Animation Settings")]
     public float fadeDuration = 1.5f; // الوقت اللي الشاشة هتاخده عشان تظهر (تقدر تغيره من اليونيتي)
 
@@ -193,17 +196,29 @@ public class GameManager : MonoBehaviour
     }
 
     public void ShowWinScreen()
-    {
-        if (instructionPanel != null) instructionPanel.SetActive(false);
+{
+    // 1. حساب السكور: بناخد الوقت المتبقي ونقربه لرقم صحيح
+    finalScore = Mathf.CeilToInt(currentTime);
 
-        if (winPanel != null)
-        {
-            winPanel.SetActive(true);
-            Time.timeScale = 0f;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+    // 2. تسجيل السكور في الـ PlayerPrefs عشان نجهزه لداتا بيز الـ PHP
+    PlayerPrefs.SetInt("PlayerScore", finalScore);
+    PlayerPrefs.Save(); // بنأكد الحفظ
+
+    // نطبع السكور في الكونسول عشان تتأكد إنه شغال صح
+    Debug.Log("🎉 Game Won! Score Saved: " + finalScore);
+
+    // 3. إخفاء رسالة التعليمات
+    if (instructionPanel != null) instructionPanel.SetActive(false);
+
+    // 4. إظهار شاشة الفوز
+    if (winPanel != null)
+    {
+        winPanel.SetActive(true);
+        Time.timeScale = 0f;      
+        Cursor.lockState = CursorLockMode.None; 
+        Cursor.visible = true;    
     }
+}
 
     public bool IsGameWon()
     {

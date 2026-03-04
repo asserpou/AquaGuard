@@ -217,7 +217,7 @@ MonoBehaviour:
   questImage: {fileID: 1436615085}
   pointerImage: {fileID: 453163751}
   borderSize: 50
-  angleOffset: -120
+  angleOffset: 0
 --- !u!1 &11643700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1213,7 @@ MonoBehaviour:
   - {fileID: 85438287}
   - {fileID: 796147412}
   tapsRequired: 8
-  phaseTime: 10
+  phaseTime: 120
   timerText: {fileID: 1769779273}
   waterBar: {fileID: 784900696}
   maxWater: 100
@@ -1224,6 +1224,7 @@ MonoBehaviour:
   winPanel: {fileID: 798645624}
   losePanel: {fileID: 39786802}
   instructionPanel: {fileID: 1897071855}
+  finalScore: 0
   fadeDuration: 1.5
 --- !u!4 &95134452
 Transform:
