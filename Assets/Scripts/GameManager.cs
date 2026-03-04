@@ -1,4 +1,4 @@
-using System.Collections; // ضفنا دي عشان الـ Coroutine (الأنيميشن)
+using System.Collections; 
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public GameObject instructionPanel;
 
     [Header("Animation Settings")]
-    public float fadeDuration = 1.5f; // الوقت اللي الشاشة هتاخده عشان تظهر (تقدر تغيره من اليونيتي)
+    public float fadeDuration = 1.5f; 
 
     void Awake()
     {
@@ -135,15 +135,15 @@ public class GameManager : MonoBehaviour
         if (fixedTaps >= tapsRequired) WinGame();
         else LoseGame();
     }
+
     void WinGame()
     {
         gameEnded = true;
         isGameWon = true;
         CancelInvoke();
 
-        Debug.Log("YOU WIN - Goal Reached!");
+        Debug.Log("🏆 YOU WIN - Goal Reached!");
 
-        // ←←←←← إضافة جديدة: ابعت البيانات فوراً
         StartCoroutine(SendScoreToServer());
 
         if (instructionPanel != null)
@@ -157,13 +157,16 @@ public class GameManager : MonoBehaviour
     private IEnumerator SendScoreToServer()
     {
         string playerName = PlayerPrefs.GetString("PlayerName", "Unknown Player");
-        float timeLeft = Mathf.Ceil(currentTime); // الوقت المتبقي (بالثانية)
+        
+        float finalScore = Mathf.Ceil(currentTime) * 100; 
+
+        // السطر ده هيطبع السكور بتاعك في الكونسول بالإنجليزي
+        Debug.Log("🎯 Your Score is: " + finalScore);
 
         WWWForm form = new WWWForm();
         form.AddField("player_name", playerName);
-        form.AddField("time_remaining", timeLeft.ToString());
+        form.AddField("time_remaining", finalScore.ToString());
 
-        // غير الرابط ده برابط ملفك على السيرفر
         string url = "http://localhost/NilEvo'sWebsite/save_score.php";
 
         using (UnityWebRequest www = UnityWebRequest.Post(url, form))
@@ -172,11 +175,13 @@ public class GameManager : MonoBehaviour
 
             if (www.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log("✅ تم إرسال الوقت بنجاح: " + www.downloadHandler.text);
+                // رسالة النجاح بالإنجليزي
+                Debug.Log("✅ Score sent successfully! Server response: " + www.downloadHandler.text);
             }
             else
             {
-                Debug.LogError("❌ فشل الإرسال: " + www.error);
+                // رسالة الفشل بالإنجليزي
+                Debug.LogError("❌ Failed to send score: " + www.error);
             }
         }
     }
@@ -186,23 +191,20 @@ public class GameManager : MonoBehaviour
     // ==========================================
     IEnumerator FadeInInstruction()
     {
-        // بنحاول نجيب الـ CanvasGroup، ولو مش موجود الكود بيضيفه أوتوماتيك
         CanvasGroup canvasGroup = instructionPanel.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
         {
             canvasGroup = instructionPanel.AddComponent<CanvasGroup>();
         }
 
-        // بنبدأ وشفافية الشاشة صفر (مخفية)
         canvasGroup.alpha = 0f;
         float elapsedTime = 0f;
 
-        // بنزود الشفافية بالتدريج لحد ما توصل 1 (ظاهرة بالكامل)
         while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;
             canvasGroup.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
-            yield return null; // استنى للفريم اللي بعده
+            yield return null; 
         }
         canvasGroup.alpha = 1f;
     }
@@ -212,7 +214,7 @@ public class GameManager : MonoBehaviour
         gameEnded = true;
         isGameWon = false;
         CancelInvoke();
-        Debug.Log("YOU LOSE - Out of Water or Time!");
+        Debug.Log("💀 YOU LOSE - Out of Water or Time!");
 
         if (losePanel != null)
         {

@@ -1212,7 +1212,7 @@ MonoBehaviour:
   - {fileID: 472309379}
   - {fileID: 85438287}
   - {fileID: 796147412}
-  tapsRequired: 8
+  tapsRequired: 1
   phaseTime: 120
   timerText: {fileID: 1769779273}
   waterBar: {fileID: 784900696}
@@ -1224,7 +1224,6 @@ MonoBehaviour:
   winPanel: {fileID: 798645624}
   losePanel: {fileID: 39786802}
   instructionPanel: {fileID: 1897071855}
-  finalScore: 0
   fadeDuration: 1.5
 --- !u!4 &95134452
 Transform:
@@ -106568,7 +106567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -454.91, y: -272.24}
+  m_AnchoredPosition: {x: -480.63, y: -286.58}
   m_SizeDelta: {x: 20, y: 9.1073}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1059306205
