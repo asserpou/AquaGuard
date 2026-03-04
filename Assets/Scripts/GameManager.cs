@@ -1,7 +1,9 @@
+using System.Collections; // ضفنا دي عشان الـ Coroutine (الأنيميشن)
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class GameManager : MonoBehaviour
     [Header("Timer")]
     public float phaseTime = 60f;
     private float currentTime;
-    public TextMeshProUGUI timerText; 
+    public TextMeshProUGUI timerText;
 
     [Header("Water")]
     public Slider waterBar;
@@ -29,10 +31,15 @@ public class GameManager : MonoBehaviour
 
     private int fixedTaps = 0;
     private bool gameEnded = false;
-    private bool isGameWon = false; // ضفنا دي عشان نعرف هو كسب ولا خسر
+    private bool isGameWon = false;
 
     [Header("UI Panels")]
-    public GameObject winPanel; // صفحة الفوز
+    public GameObject winPanel;
+    public GameObject losePanel;
+    public GameObject instructionPanel;
+
+    [Header("Animation Settings")]
+    public float fadeDuration = 1.5f; // الوقت اللي الشاشة هتاخده عشان تظهر (تقدر تغيره من اليونيتي)
 
     void Awake()
     {
@@ -46,6 +53,8 @@ public class GameManager : MonoBehaviour
         fixedTaps = 0;
         currentTime = phaseTime;
         currentWater = maxWater;
+
+        if (instructionPanel != null) instructionPanel.SetActive(false);
 
         if (waterBar != null)
         {
@@ -129,33 +138,87 @@ public class GameManager : MonoBehaviour
     void WinGame()
     {
         gameEnded = true;
-        isGameWon = true; // اللاعب كسب
+        isGameWon = true;
         CancelInvoke();
         Debug.Log("YOU WIN - Goal Reached!");
+
+        if (instructionPanel != null)
+        {
+            instructionPanel.SetActive(true);
+            // تشغيل الأنيميشن بتاع الـ Fade
+            StartCoroutine(FadeInInstruction()); 
+        }
+    }
+
+    // ==========================================
+    // دالة الأنيميشن (Coroutine) لعمل الـ Fade-in
+    // ==========================================
+    IEnumerator FadeInInstruction()
+    {
+        // بنحاول نجيب الـ CanvasGroup، ولو مش موجود الكود بيضيفه أوتوماتيك
+        CanvasGroup canvasGroup = instructionPanel.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            canvasGroup = instructionPanel.AddComponent<CanvasGroup>();
+        }
+
+        // بنبدأ وشفافية الشاشة صفر (مخفية)
+        canvasGroup.alpha = 0f; 
+        float elapsedTime = 0f;
+
+        // بنزود الشفافية بالتدريج لحد ما توصل 1 (ظاهرة بالكامل)
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
+            yield return null; // استنى للفريم اللي بعده
+        }
+        canvasGroup.alpha = 1f; 
     }
 
     void LoseGame()
     {
         gameEnded = true;
-        isGameWon = false; // اللاعب خسر
+        isGameWon = false;
         CancelInvoke();
         Debug.Log("YOU LOSE - Out of Water or Time!");
+
+        if (losePanel != null)
+        {
+            losePanel.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     public void ShowWinScreen()
     {
+        if (instructionPanel != null) instructionPanel.SetActive(false);
+
         if (winPanel != null)
         {
             winPanel.SetActive(true);
-            Time.timeScale = 0f;      
-            Cursor.lockState = CursorLockMode.None; 
-            Cursor.visible = true;    
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
-    // الدالة دي اللي كود البيت وكود السهم هيسألوها
-    public bool IsGameWon() 
+    public bool IsGameWon()
     {
         return isGameWon;
+    }
+
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("main mune");
+    }
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

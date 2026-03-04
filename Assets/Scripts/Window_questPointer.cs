@@ -1,45 +1,64 @@
 using UnityEngine;
 
-public class Window_questPointer : MonoBehaviour {
+public class Window_questPointer : MonoBehaviour 
+{
     [Header("UI Objects")]
     public GameObject pointerImage; 
     public GameObject dangerIcon;   
     public GameObject speechBubble; 
 
     [Header("Target")]
-    public Transform target; 
+    public Transform target; // الـ HouseTrigger
 
-    void Update() {
-        if (GameManager.Instance == null || !GameManager.Instance.IsGameWon()) {
-            if (pointerImage.activeSelf) pointerImage.SetActive(false);
-            if (dangerIcon.activeSelf) dangerIcon.SetActive(false);
-            if (speechBubble.activeSelf) speechBubble.SetActive(false);
-            return; //
+    void LateUpdate() 
+    {
+        if (GameManager.Instance == null || !GameManager.Instance.IsGameWon()) 
+        {
+            if(pointerImage) pointerImage.SetActive(false);
+            if(dangerIcon) dangerIcon.SetActive(false);
+            if(speechBubble) speechBubble.SetActive(false);
+            return; 
         }
 
         if (target == null) return;
 
+        // تحويل مكان البيت لنقطة على الشاشة
         Vector3 screenPos = Camera.main.WorldToScreenPoint(target.position);
-        bool isInside = screenPos.z > 0 && screenPos.x > 50 && screenPos.x < Screen.width - 50 && screenPos.y > 50 && screenPos.y < Screen.height - 50;
+        
+        bool isBehindCamera = screenPos.z < 0;
+        bool isInsideScreen = !isBehindCamera && 
+                              screenPos.x > 0 && screenPos.x < Screen.width && 
+                              screenPos.y > 0 && screenPos.y < Screen.height;
 
-        if (isInside) {
-            if (!dangerIcon.activeSelf) dangerIcon.SetActive(true);
-            if (!speechBubble.activeSelf) speechBubble.SetActive(true);
-            if (pointerImage.activeSelf) pointerImage.SetActive(false);
-        } else {
-            if (dangerIcon.activeSelf) dangerIcon.SetActive(false);
-            if (speechBubble.activeSelf) speechBubble.SetActive(false);
-            if (!pointerImage.activeSelf) pointerImage.SetActive(true);
+        if (isInsideScreen) 
+        {
+            // البيت جوه الشاشة: إظهار العلامات وإخفاء السهم
+            if(dangerIcon) dangerIcon.SetActive(true);
+            if(speechBubble) speechBubble.SetActive(true);
+            if(pointerImage) pointerImage.SetActive(false);
 
-            Vector3 cappedPos = screenPos;
-            if (cappedPos.z < 0) cappedPos *= -1f;
-            float x = Mathf.Clamp(cappedPos.x, 50, Screen.width - 50);
-            float y = Mathf.Clamp(cappedPos.y, 50, Screen.height - 50);
-            pointerImage.transform.position = new Vector3(x, y, 0f);
+            // *** مفيش أي كود هنا بيغير مكانهم، هيفضلوا على إحداثياتهم الثابتة اللي إنت عاملها في الـ Inspector ***
+        } 
+        else 
+        {
+            // البيت بره الشاشة: إظهار السهم وإخفاء العلامات
+            if(dangerIcon) dangerIcon.SetActive(false);
+            if(speechBubble) speechBubble.SetActive(false);
+            if(pointerImage) pointerImage.SetActive(true);
 
-            Vector3 screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
-            Vector3 dir = (new Vector3(x, y, 0f) - screenCenter).normalized;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Vector3 pointerPos = screenPos;
+            if (isBehindCamera) pointerPos *= -1f;
+
+            // تظبيط مكان السهم بس
+            float margin = 50f;
+            float clampedX = Mathf.Clamp(pointerPos.x, margin, Screen.width - margin);
+            float clampedY = Mathf.Clamp(pointerPos.y, margin, Screen.height - margin);
+            pointerImage.transform.position = new Vector3(clampedX, clampedY, 0f);
+
+            // تدوير السهم ناحية البيت
+            Vector3 centerPosition = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
+            Vector3 direction = (new Vector3(clampedX, clampedY, 0f) - centerPosition).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             pointerImage.transform.localEulerAngles = new Vector3(0, 0, angle); 
         }
     }

@@ -2,35 +2,46 @@ using UnityEngine;
 
 public class HouseInteraction : MonoBehaviour
 {
-    private bool isPlayerNear = false;
+    // خليناها public عشان تبان في الـ Inspector وتقدر تتابعها بعينك
+    public bool isPlayerNear = false; 
 
     void Update()
     {
-        // 1. لو اللعبة مخلصتش بفوز، متعملش حاجة
+        // أنا موقف شرط المكسب مؤقتاً عشان نختبر الشاشة تفتح ولا لأ من غير ما نلعب الجيم
         if (GameManager.Instance == null || !GameManager.Instance.IsGameWon()) return;
 
-        // 2. لو اللاعب جوه الـ Collider وداس E
+        // لو اللاعب قريب وداس E
         if (isPlayerNear && Input.GetKeyDown(KeyCode.E))
         {
-            GameManager.Instance.ShowWinScreen(); // افتح الـ Pop-up
+            Debug.Log("🟢 1. تم الضغط على حرف E!");
+
+            if (GameManager.Instance != null)
+            {
+                Debug.Log("🟢 2. الـ GameManager موجود، بنحاول نفتح شاشة الفوز...");
+                GameManager.Instance.ShowWinScreen();
+            }
+            else
+            {
+                Debug.LogError("🔴 مشكلة: اللعبة مش لاقية الـ GameManager!");
+            }
         }
     }
 
-    // الدالة دي بتشتغل لما اللاعب يدخل جوه الـ Box Collider
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             isPlayerNear = true;
+            Debug.Log("🟡 اللاعب دخل المربع بتاع البيت! (isPlayerNear = true)"); 
         }
     }
 
-    // الدالة دي بتشتغل لما اللاعب يخرج بره الـ Box Collider
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             isPlayerNear = false;
+            Debug.Log("⚪ اللاعب خرج بره البيت. (isPlayerNear = false)");
         }
     }
 }
