@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;   
 
 public class GameManager : MonoBehaviour
 {
@@ -37,9 +38,6 @@ public class GameManager : MonoBehaviour
     public GameObject winPanel;
     public GameObject losePanel;
     public GameObject instructionPanel;
-
-    [Header("Scoring System")]
-    public int finalScore = 0; // ده اللي هيتخزن فيه السكور النهائي
 
     [Header("Animation Settings")]
     public float fadeDuration = 1.5f; // الوقت اللي الشاشة هتاخده عشان تظهر (تقدر تغيره من اليونيتي)
@@ -137,19 +135,49 @@ public class GameManager : MonoBehaviour
         if (fixedTaps >= tapsRequired) WinGame();
         else LoseGame();
     }
-
     void WinGame()
     {
         gameEnded = true;
         isGameWon = true;
         CancelInvoke();
+
         Debug.Log("YOU WIN - Goal Reached!");
+
+        // ←←←←← إضافة جديدة: ابعت البيانات فوراً
+        StartCoroutine(SendScoreToServer());
 
         if (instructionPanel != null)
         {
             instructionPanel.SetActive(true);
-            // تشغيل الأنيميشن بتاع الـ Fade
-            StartCoroutine(FadeInInstruction()); 
+            StartCoroutine(FadeInInstruction());
+        }
+    }
+
+    // ====================== إرسال الوقت للـ PHP ======================
+    private IEnumerator SendScoreToServer()
+    {
+        string playerName = PlayerPrefs.GetString("PlayerName", "Unknown Player");
+        float timeLeft = Mathf.Ceil(currentTime); // الوقت المتبقي (بالثانية)
+
+        WWWForm form = new WWWForm();
+        form.AddField("player_name", playerName);
+        form.AddField("time_remaining", timeLeft.ToString());
+
+        // غير الرابط ده برابط ملفك على السيرفر
+        string url = "http://localhost/NilEvo'sWebsite/save_score.php";
+
+        using (UnityWebRequest www = UnityWebRequest.Post(url, form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("✅ تم إرسال الوقت بنجاح: " + www.downloadHandler.text);
+            }
+            else
+            {
+                Debug.LogError("❌ فشل الإرسال: " + www.error);
+            }
         }
     }
 
@@ -166,7 +194,7 @@ public class GameManager : MonoBehaviour
         }
 
         // بنبدأ وشفافية الشاشة صفر (مخفية)
-        canvasGroup.alpha = 0f; 
+        canvasGroup.alpha = 0f;
         float elapsedTime = 0f;
 
         // بنزود الشفافية بالتدريج لحد ما توصل 1 (ظاهرة بالكامل)
@@ -176,7 +204,7 @@ public class GameManager : MonoBehaviour
             canvasGroup.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
             yield return null; // استنى للفريم اللي بعده
         }
-        canvasGroup.alpha = 1f; 
+        canvasGroup.alpha = 1f;
     }
 
     void LoseGame()
@@ -196,29 +224,17 @@ public class GameManager : MonoBehaviour
     }
 
     public void ShowWinScreen()
-{
-    // 1. حساب السكور: بناخد الوقت المتبقي ونقربه لرقم صحيح
-    finalScore = Mathf.CeilToInt(currentTime);
-
-    // 2. تسجيل السكور في الـ PlayerPrefs عشان نجهزه لداتا بيز الـ PHP
-    PlayerPrefs.SetInt("PlayerScore", finalScore);
-    PlayerPrefs.Save(); // بنأكد الحفظ
-
-    // نطبع السكور في الكونسول عشان تتأكد إنه شغال صح
-    Debug.Log("🎉 Game Won! Score Saved: " + finalScore);
-
-    // 3. إخفاء رسالة التعليمات
-    if (instructionPanel != null) instructionPanel.SetActive(false);
-
-    // 4. إظهار شاشة الفوز
-    if (winPanel != null)
     {
-        winPanel.SetActive(true);
-        Time.timeScale = 0f;      
-        Cursor.lockState = CursorLockMode.None; 
-        Cursor.visible = true;    
+        if (instructionPanel != null) instructionPanel.SetActive(false);
+
+        if (winPanel != null)
+        {
+            winPanel.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
-}
 
     public bool IsGameWon()
     {
