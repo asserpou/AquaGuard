@@ -1,0 +1,308 @@
+fileFormatVersion: 2
+guid: fb594399207e9ab49b48c69f4c723028
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -945513435176619652
+    second: Border Text 1_0
+  - first:
+      213: -7176203379449435971
+    second: Border Text 1_1
+  - first:
+      213: 5307728906249830695
+    second: Border Text 1_2
+  - first:
+      213: -8523913171007108618
+    second: Border Text 1_3
+  - first:
+      213: -8086589241765087773
+    second: Border Text 1_4
+  - first:
+      213: 2207006226414111382
+    second: Border Text 1_5
+  - first:
+      213: -1659458669951554900
+    second: Border Text 1_6
+  - first:
+      213: -5249475442816556340
+    second: Border Text 1_7
+  - first:
+      213: 8781162282346065888
+    second: Border Text 1_8
+  - first:
+      213: 2372530747588403881
+    second: Border Text 1_9
+  - first:
+      213: -7237255416454580818
+    second: Border Text 1_10
+  - first:
+      213: -5546398765391199344
+    second: Border Text 1_11
+  - first:
+      213: -8805908419070467552
+    second: Border Text 1_12
+  - first:
+      213: -2084012674734909574
+    second: Border Text 1_13
+  - first:
+      213: -2284897624785054462
+    second: Border Text 1_14
+  - first:
+      213: -7460245618587436595
+    second: Border Text 1_15
+  - first:
+      213: -7150680618511991509
+    second: Border Text 1_16
+  - first:
+      213: -6561738246448583040
+    second: Border Text 1_17
+  - first:
+      213: -452437109482166539
+    second: Border Text 1_18
+  - first:
+      213: 2051252156311698854
+    second: Border Text 1_19
+  - first:
+      213: 3514263248443982431
+    second: Border Text 1_20
+  - first:
+      213: 7202999848138855976
+    second: Border Text 1_21
+  - first:
+      213: -7709640718643319562
+    second: Border Text 1_22
+  - first:
+      213: -1459952084867163023
+    second: Border Text 1_23
+  - first:
+      213: -679904602322632816
+    second: Border Text 1_24
+  - first:
+      213: -7067848442677024162
+    second: Border Text 1_25
+  - first:
+      213: -799892940287710975
+    second: Border Text 1_26
+  - first:
+      213: 5184539040068747978
+    second: Border Text 1_27
+  - first:
+      213: 7086092820194348422
+    second: Border Text 1_28
+  - first:
+      213: -4022937429482237231
+    second: Border Text 1_29
+  - first:
+      213: 1420572198462314007
+    second: Border Text 1_30
+  - first:
+      213: -5302266430694868035
+    second: Border Text 1_31
+  - first:
+      213: 5724188079612287880
+    second: Border Text 1_32
+  - first:
+      213: 2421963017867480500
+    second: Border Text 1_33
+  - first:
+      213: -2032830418422098324
+    second: Border Text 1_34
+  - first:
+      213: 4392234845890857784
+    second: Border Text 1_35
+  - first:
+      213: -6954248302724157373
+    second: Border Text 1_36
+  - first:
+      213: -1192395644635187047
+    second: Border Text 1_37
+  - first:
+      213: 1632721433230911782
+    second: Border Text 1_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Border Text 1_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 631
+        width: 1943
+        height: 965
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7130fd4a8cd0e2f0800000000000000
+      internalID: -945513435176619652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b0e5c27246f3a5547826c0d76e9e5c49
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Border Text 1_0: -945513435176619652
+      Border Text 1_1: -7176203379449435971
+      Border Text 1_10: -7237255416454580818
+      Border Text 1_11: -5546398765391199344
+      Border Text 1_12: -8805908419070467552
+      Border Text 1_13: -2084012674734909574
+      Border Text 1_14: -2284897624785054462
+      Border Text 1_15: -7460245618587436595
+      Border Text 1_16: -7150680618511991509
+      Border Text 1_17: -6561738246448583040
+      Border Text 1_18: -452437109482166539
+      Border Text 1_19: 2051252156311698854
+      Border Text 1_2: 5307728906249830695
+      Border Text 1_20: 3514263248443982431
+      Border Text 1_21: 7202999848138855976
+      Border Text 1_22: -7709640718643319562
+      Border Text 1_23: -1459952084867163023
+      Border Text 1_24: -679904602322632816
+      Border Text 1_25: -7067848442677024162
+      Border Text 1_26: -799892940287710975
+      Border Text 1_27: 5184539040068747978
+      Border Text 1_28: 7086092820194348422
+      Border Text 1_29: -4022937429482237231
+      Border Text 1_3: -8523913171007108618
+      Border Text 1_30: 1420572198462314007
+      Border Text 1_31: -5302266430694868035
+      Border Text 1_32: 5724188079612287880
+      Border Text 1_33: 2421963017867480500
+      Border Text 1_34: -2032830418422098324
+      Border Text 1_35: 4392234845890857784
+      Border Text 1_36: -6954248302724157373
+      Border Text 1_37: -1192395644635187047
+      Border Text 1_38: 1632721433230911782
+      Border Text 1_4: -8086589241765087773
+      Border Text 1_5: 2207006226414111382
+      Border Text 1_6: -1659458669951554900
+      Border Text 1_7: -5249475442816556340
+      Border Text 1_8: 8781162282346065888
+      Border Text 1_9: 2372530747588403881
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

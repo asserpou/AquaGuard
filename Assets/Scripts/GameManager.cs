@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
         isGameWon = true;
         CancelInvoke();
 
-        Debug.Log("🏆 YOU WIN - Goal Reached!");
+        Debug.Log("WIN - Goal Reached!");
 
         StartCoroutine(SendScoreToServer());
 
@@ -153,37 +153,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // ====================== إرسال الوقت للـ PHP ======================
+    // ====================== إرسال السكور للصفحة ======================
     private IEnumerator SendScoreToServer()
     {
-        string playerName = PlayerPrefs.GetString("PlayerName", "Unknown Player");
-        
-        float finalScore = Mathf.Ceil(currentTime) * 100; 
+        int finalScore = Mathf.CeilToInt(currentTime) * 100;
+        Debug.Log("Your Score: " + finalScore);
 
-        // السطر ده هيطبع السكور بتاعك في الكونسول بالإنجليزي
-        Debug.Log("🎯 Your Score is: " + finalScore);
+        // بعت السكور للصفحة بـ postMessage
+        // الصفحة (aquaguard.js) هي اللي هتحفظه في الداتابيز عن طريق الـ session
+        Application.ExternalEval(
+            "window.parent.postMessage(" +
+            "{type:'AQUAGUARD_SCORE',score:" + finalScore + "}" +
+            ",'*');"
+        );
 
-        WWWForm form = new WWWForm();
-        form.AddField("player_name", playerName);
-        form.AddField("time_remaining", finalScore.ToString());
-
-        string url = "http://localhost/NilEvo'sWebsite/save_score.php";
-
-        using (UnityWebRequest www = UnityWebRequest.Post(url, form))
-        {
-            yield return www.SendWebRequest();
-
-            if (www.result == UnityWebRequest.Result.Success)
-            {
-                // رسالة النجاح بالإنجليزي
-                Debug.Log("✅ Score sent successfully! Server response: " + www.downloadHandler.text);
-            }
-            else
-            {
-                // رسالة الفشل بالإنجليزي
-                Debug.LogError("❌ Failed to send score: " + www.error);
-            }
-        }
+        yield return null;
     }
 
     // ==========================================
@@ -214,7 +198,7 @@ public class GameManager : MonoBehaviour
         gameEnded = true;
         isGameWon = false;
         CancelInvoke();
-        Debug.Log("💀 YOU LOSE - Out of Water or Time!");
+        Debug.Log("YOU LOSE - Out of Water or Time!");
 
         if (losePanel != null)
         {
