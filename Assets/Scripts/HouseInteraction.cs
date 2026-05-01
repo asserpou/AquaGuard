@@ -21,9 +21,16 @@ public class HouseInteraction : MonoBehaviour
     {
         if (GameManager.Instance == null) return;
 
-        if (isPlayerNear && Input.GetKeyDown(KeyCode.E) && !hasInteracted)
-        {
+        // لو اللاعب قريب وداس E ولسه متفاعلش
+        if (isPlayerNear && Input.GetKeyDown(KeyCode.E) && GameManager.Instance.canEnterHouse)        {
             hasInteracted = true; 
+            
+            // نخفي اللوحة فوراً أول ما يدوس عشان متظهرش في الكات سين
+            if (InteractionPrompt.Instance != null)
+            {
+                InteractionPrompt.Instance.HidePrompt();
+            }
+
             StartCoroutine(PlayCutscene()); 
         }
     }
@@ -61,6 +68,8 @@ public class HouseInteraction : MonoBehaviour
     // دالة بتعمل Fade Out لأي حاجة
     IEnumerator FadeOutCanvasGroup(CanvasGroup cg, float duration)
     {
+        if (cg == null) yield break; // حماية إضافية
+        
         float elapsed = 0f;
         float startAlpha = cg.alpha;
         while (elapsed < duration)
@@ -74,11 +83,29 @@ public class HouseInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) isPlayerNear = true;
+        if (collision.CompareTag("Player"))
+        {
+            isPlayerNear = true;
+
+            // اللوحة مش هتظهر للاعب إلا لو خلص تصليح الحنفيات
+            if (GameManager.Instance.canEnterHouse && InteractionPrompt.Instance != null)
+            {
+                InteractionPrompt.Instance.ShowPrompt("Talk to Neighbor"); // أو أي رسالة إنت كاتبها
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) isPlayerNear = false;
+        if (collision.CompareTag("Player"))
+        {
+            isPlayerNear = false;
+
+            // نخفي اللوحة لما اللاعب يبعد عن البيت
+            if (InteractionPrompt.Instance != null)
+            {
+                InteractionPrompt.Instance.HidePrompt();
+            }
+        }
     }
 }

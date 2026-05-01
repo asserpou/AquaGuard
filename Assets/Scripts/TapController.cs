@@ -13,12 +13,24 @@ public class TapController : MonoBehaviour
     public float hurryUpTime = 5f;
 
     private Coroutine leakCoroutine;
+    
+    // متغير جديد عشان نعرف اللاعب قريب ولا لأ
+    private bool isPlayerNear = false; 
 
     void Start()
     {
         animator = GetComponent<Animator>();
         // إخفاء كل شيء عند البداية
         HideAllUI();
+    }
+
+    void Update()
+    {
+        // لو اللاعب قريب، والحنفية بتسرب، وداس حرف الـ E
+        if (isPlayerNear && isLeaking && Input.GetKeyDown(KeyCode.E))
+        {
+            FixTap();
+        }
     }
 
     public void StartLeak()
@@ -38,6 +50,12 @@ public class TapController : MonoBehaviour
             {
                 statusText.color = myColor;
             }
+        }
+
+        // لو اللاعب كان واقف أصلاً جنب الحنفية وهي بدأت تسرب، نظهرله اللوحة فوراً
+        if (isPlayerNear && InteractionPrompt.Instance != null)
+        {
+            InteractionPrompt.Instance.ShowPrompt("Fix Tap");
         }
 
         leakCoroutine = StartCoroutine(LeakTimer());
@@ -78,6 +96,12 @@ public class TapController : MonoBehaviour
         if (!isLeaking) return;
         isLeaking = false;
 
+        // أول ما تتصلح، نخفي رسالة (Press E) فوراً
+        if (InteractionPrompt.Instance != null) 
+        {
+            InteractionPrompt.Instance.HidePrompt();
+        }
+
         if (leakCoroutine != null) StopCoroutine(leakCoroutine);
         animator.SetBool("IsLeaking", false);
 
@@ -102,12 +126,48 @@ public class TapController : MonoBehaviour
         isLeaking = false;
         animator.SetBool("IsLeaking", false);
         HideAllUI(); // استدعاء وظيفة الإخفاء الشاملة
+
+        // لو الوقت خلص والماية وقفت لوحدها، نخفي الرسالة برضو
+        if (InteractionPrompt.Instance != null) 
+        {
+            InteractionPrompt.Instance.HidePrompt();
+        }
     }
 
-    // وظيفة مساعدة للتأكد من إخفاء الكانفاس والتيكست معاً
     private void HideAllUI()
     {
         if (leakCanvas != null) leakCanvas.SetActive(false);
         if (statusText != null) statusText.gameObject.SetActive(false);
+    }
+
+    // ==========================================
+    // دوال اكتشاف اللاعب (جديد)
+    // ==========================================
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isPlayerNear = true;
+
+            // نظهر اللوحة بس لو الحنفية بايظة
+            if (isLeaking && InteractionPrompt.Instance != null)
+            {
+                InteractionPrompt.Instance.ShowPrompt("Fix Tap");
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isPlayerNear = false;
+
+            // لما اللاعب يبعد، نخفي اللوحة
+            if (InteractionPrompt.Instance != null)
+            {
+                InteractionPrompt.Instance.HidePrompt();
+            }
+        }
     }
 }

@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     [Header("Water")]
     public Slider waterBar;
     public float maxWater = 100f;
-    private float currentWater;
+    public float currentWater;
     public float waterDecreaseRate = 1f;
 
     [Header("Leak Settings")]
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     private int fixedTaps = 0;
     private bool gameEnded = false;
     private bool isGameWon = false;
+    public bool canEnterHouse = false;
 
     [Header("UI Panels")]
     public GameObject winPanel;
@@ -119,6 +120,7 @@ public class GameManager : MonoBehaviour
 
     public void TapFixed()
     {
+        canEnterHouse = true;
         if (gameEnded) return;
 
         fixedTaps++;

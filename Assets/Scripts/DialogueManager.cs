@@ -28,10 +28,12 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Other UI Elements")]
     public GameObject waterBarUI; 
+    public GameObject timerUI; 
 
     [Header("Post-Dialogue Events")]
-    public AdviceCutscene adviceCutscene; // اسحب سكريبت الـ Cutscene الجديد هنا
-
+    public AdviceCutscene adviceCutscene; 
+    public IgnoreCutscene ignoreCutscene; 
+    
 
     // ==========================================
     // 2. الدوال الأساسية للتشغيل والقفل
@@ -39,54 +41,42 @@ public class DialogueManager : MonoBehaviour
 
     public void OpenDialogue()
     {
-        // تشغيل الشاشة الرئيسية
-        if (dialoguePanel != null)
-        {
-            dialoguePanel.SetActive(true);
-        }
+        if (timerUI != null) timerUI.SetActive(false);
 
-        // إخفاء كل العناصر يدوياً قبل بدأ الأنيميشن
+        if (dialoguePanel != null) dialoguePanel.SetActive(true);
+
+        // إخفاء وتصفير حجم كل العناصر قبل الأنيميشن
         HideGroup(saveButtonGroup);
         HideGroup(leaveButtonGroup);
         HideGroup(extraTextGroup);
         HideGroup(extraPanelGroup);
 
-        // تشغيل تسلسل الأحداث (الكتابة والظهور)
         StartCoroutine(DialogueSequence());
     }
 
     private void CloseDialogue() 
     { 
-        // قفل الشاشة
-        if (dialoguePanel != null) 
-        {
-            dialoguePanel.SetActive(false); 
-        }
+        if (dialoguePanel != null) dialoguePanel.SetActive(false); 
+        if (waterBarUI != null) waterBarUI.SetActive(true); 
+        if (timerUI != null) timerUI.SetActive(true);
         
-        // إرجاع عداد المياه
-        if (waterBarUI != null) 
-        {
-            waterBarUI.SetActive(true); 
-        }
-        
-        // إرجاع الوقت لطبيعته
         Time.timeScale = 1f; 
     }
 
 
     // ==========================================
-    // 3. تسلسل الأحداث (الأنيميشن)
+    // 3. تسلسل الأحداث (الأنيميشن الجامد)
     // ==========================================
 
     private IEnumerator DialogueSequence()
     {
-        // الخطوة الأولى: إظهار الشاشة الرئيسية ببطء
+        // 1. دخول اللوحة الرئيسية بأنيميشن السوستة (Pop-in Bounce)
         if (mainPanelGroup != null)
         {
-            yield return StartCoroutine(FadeCanvasGroup(mainPanelGroup, 1f, 0.5f));
+            yield return StartCoroutine(PopInElement(mainPanelGroup, 0.4f));
         }
 
-        // الخطوة الثانية: كتابة النص حرف بحرف
+        // 2. كتابة النص حرف بحرف
         if (dialogueText != null)
         {
             dialogueText.text = ""; 
@@ -97,68 +87,78 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        // الخطوة الثالثة: إظهار التيكست الإضافي واللوحة اللي وراه مع بعض
+        // 3. دخول الأجزاء الإضافية (إن وجدت)
         if (extraPanelGroup != null) 
         {
-            StartCoroutine(FadeCanvasGroup(extraPanelGroup, 1f, 0.4f));
+            StartCoroutine(PopInElement(extraPanelGroup, 0.3f));
         }
-        
         if (extraTextGroup != null) 
         {
-            yield return StartCoroutine(FadeCanvasGroup(extraTextGroup, 1f, 0.4f));
-        }
-        else if (extraPanelGroup != null) 
-        {
-            yield return new WaitForSecondsRealtime(0.4f);
+            yield return new WaitForSecondsRealtime(0.1f);
+            yield return StartCoroutine(PopInElement(extraTextGroup, 0.3f));
         }
 
-        // الخطوة الرابعة: إظهار الزراير مع بعض
+        // 4. دخول الزراير ورا بعض بشياكة
         if (saveButtonGroup != null) 
         {
-            StartCoroutine(FadeCanvasGroup(saveButtonGroup, 1f, 0.4f));
+            StartCoroutine(PopInElement(saveButtonGroup, 0.3f));
         }
         
         if (leaveButtonGroup != null) 
         {
-            yield return StartCoroutine(FadeCanvasGroup(leaveButtonGroup, 1f, 0.4f));
+            yield return new WaitForSecondsRealtime(0.15f); // تأخير بسيط عشان يدخلوا ورا بعض مش مع بعض
+            yield return StartCoroutine(PopInElement(leaveButtonGroup, 0.3f));
         }
     }
 
 
     // ==========================================
-    // 4. دوال مساعدة (للإخفاء والإظهار)
+    // 4. دالة الأنيميشن السحرية (Pop-In & Fade)
     // ==========================================
 
-    private IEnumerator FadeCanvasGroup(CanvasGroup cg, float targetAlpha, float duration)
+    private IEnumerator PopInElement(CanvasGroup cg, float duration)
     {
-        if (cg == null) 
-        {
-            yield break; // لو الخانة فاضية، تجاهلها وكمل الكود
-        }
+        if (cg == null) yield break; 
         
+        Transform t = cg.transform;
+        cg.alpha = 0f;
+        t.localScale = Vector3.zero;
+        cg.interactable = false;
+        cg.blocksRaycasts = false;
+
         float elapsed = 0f;
-        float startAlpha = cg.alpha;
         
         while (elapsed < duration)
         {
             elapsed += Time.unscaledDeltaTime;
-            cg.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsed / duration);
+            float percent = elapsed / duration;
+
+            // معادلة رياضية بتعمل تأثير السوستة (Ease Out Back)
+            float c1 = 1.70158f;
+            float c3 = c1 + 1f;
+            float scale = 1f + c3 * Mathf.Pow(percent - 1f, 3f) + c1 * Mathf.Pow(percent - 1f, 2f);
+
+            // حماية عشان الحجم ماينزلش بالسالب
+            if(scale < 0) scale = 0;
+
+            t.localScale = new Vector3(scale, scale, scale);
+            cg.alpha = Mathf.Lerp(0f, 1f, percent * 1.5f); // الظهور بيكون أسرع شوية من الحجم
+            
             yield return null;
         }
         
-        cg.alpha = targetAlpha;
-        cg.interactable = (targetAlpha == 1f);
-        cg.blocksRaycasts = (targetAlpha == 1f);
+        t.localScale = Vector3.one;
+        cg.alpha = 1f;
+        cg.interactable = true;
+        cg.blocksRaycasts = true;
     }
 
     private void HideGroup(CanvasGroup cg)
     {
-        if (cg == null) 
-        {
-            return; // لو الخانة فاضية، تجاهلها
-        }
+        if (cg == null) return; 
         
         cg.alpha = 0f;
+        cg.transform.localScale = Vector3.zero; // نخليه صفر عشان الأنيميشن يشتغل صح
         cg.interactable = false;
         cg.blocksRaycasts = false;
     }
@@ -170,27 +170,33 @@ public class DialogueManager : MonoBehaviour
 
     public void ChooseGood() 
     {
-        if (GameManager.Instance != null) 
-        {
-            GameManager.Instance.AddWaterEvent(10f);
-        }
+        if (dialoguePanel != null) dialoguePanel.SetActive(false);
+        if (waterBarUI != null) waterBarUI.SetActive(true);
 
-        // تشغيل الكات سين الخاصة بالنصيحة
+        // السطر ده اللي هيفك الـ Freeze ويخلي الكاميرا والأنيميشن يتحركوا
+        Time.timeScale = 1f; 
+
         if (adviceCutscene != null)
         {
             adviceCutscene.PlayAdviceEffect();
         }
-
-        CloseDialogue(); 
     }
-
     public void ChooseBad() 
     {
-        if (GameManager.Instance != null) 
+        if (dialoguePanel != null) dialoguePanel.SetActive(false);
+        if (waterBarUI != null) waterBarUI.SetActive(true);
+
+        // السطر ده اللي هيفك الـ Freeze ويخلي الكاميرا والأنيميشن يتحركوا
+        Time.timeScale = 1f; 
+
+        if (ignoreCutscene != null)
         {
-            GameManager.Instance.SubtractWaterEvent(10f);
+            ignoreCutscene.PlayIgnoreEffect();
         }
-        CloseDialogue(); 
+        else if (GameManager.Instance != null) 
+        {
+            GameManager.Instance.SubtractWaterEvent(20f);
+        }
     }
 
     public void ChooseNeutral() 
