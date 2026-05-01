@@ -130,6 +130,32 @@ public class GameManager : MonoBehaviour
         if (fixedTaps >= tapsRequired) WinGame();
     }
 
+    // ==============================================================
+    // الدوال الجديدة للتحكم في الماية من الحوار 
+    // ==============================================================
+    public void AddWaterEvent(float amount)
+    {
+        currentWater += amount;
+        currentWater = Mathf.Clamp(currentWater, 0, maxWater); // عشان العداد ميعديش الـ 100
+        if (waterBar != null) waterBar.value = currentWater;
+        Debug.Log("Water Saved! Current Water: " + currentWater);
+    }
+
+    public void SubtractWaterEvent(float amount)
+    {
+        currentWater -= amount;
+        currentWater = Mathf.Clamp(currentWater, 0, maxWater);
+        if (waterBar != null) waterBar.value = currentWater;
+        Debug.Log("Water Wasted! Current Water: " + currentWater);
+
+        // لو الماية خلصت بسبب الاختيار الغلط، يخسر اللعبة فوراً
+        if (currentWater <= 0) 
+        {
+            LoseGame();
+        }
+    }
+    // ==============================================================
+
     void CheckPhaseResult()
     {
         if (fixedTaps >= tapsRequired) WinGame();
@@ -153,14 +179,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // ====================== إرسال السكور للصفحة ======================
     private IEnumerator SendScoreToServer()
     {
         int finalScore = Mathf.CeilToInt(currentTime) * 100;
         Debug.Log("Your Score: " + finalScore);
 
-        // بعت السكور للصفحة بـ postMessage
-        // الصفحة (aquaguard.js) هي اللي هتحفظه في الداتابيز عن طريق الـ session
         Application.ExternalEval(
             "window.parent.postMessage(" +
             "{type:'AQUAGUARD_SCORE',score:" + finalScore + "}" +
@@ -170,9 +193,6 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
-    // ==========================================
-    // دالة الأنيميشن (Coroutine) لعمل الـ Fade-in
-    // ==========================================
     IEnumerator FadeInInstruction()
     {
         CanvasGroup canvasGroup = instructionPanel.GetComponent<CanvasGroup>();
@@ -193,7 +213,7 @@ public class GameManager : MonoBehaviour
         canvasGroup.alpha = 1f;
     }
 
-    void LoseGame()
+    public void LoseGame()
     {
         gameEnded = true;
         isGameWon = false;
